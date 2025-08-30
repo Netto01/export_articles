@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Articles - Download de Arquivos Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-download"></i> Export Articles</h1>
+            <p>Ferramenta acadêmica para download automático de arquivos de páginas web</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="url-input">
+                    <label for="url">URL da Página:</label>
+                    <div class="input-group">
+                        <input type="url" id="url" placeholder="https://exemplo.com/artigos" required>
+                        <button id="scan-btn" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Escanear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="options">
+                    <div class="filters">
+                        <h3>Tipos de Arquivo:</h3>
+                        <div class="filter-grid">
+                            <label><input type="checkbox" id="pdf" checked> PDF</label>
+                            <label><input type="checkbox" id="doc" checked> DOC/DOCX</label>
+                            <label><input type="checkbox" id="xls" checked> XLS/XLSX</label>
+                            <label><input type="checkbox" id="ppt" checked> PPT/PPTX</label>
+                            <label><input type="checkbox" id="txt" checked> TXT</label>
+                            <label><input type="checkbox" id="zip" checked> ZIP/RAR</label>
+                            <label><input type="checkbox" id="img"> Imagens</label>
+                            <label><input type="checkbox" id="all"> Todos</label>
+                        </div>
+                    </div>
+
+                    <div class="depth-control">
+                        <label for="depth">Profundidade de Busca:</label>
+                        <select id="depth">
+                            <option value="1">Apenas página atual</option>
+                            <option value="2">1 nível de profundidade</option>
+                            <option value="3">2 níveis de profundidade</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="results-header">
+                    <h3>Arquivos Encontrados</h3>
+                    <div class="controls">
+                        <button id="select-all" class="btn btn-secondary">
+                            <i class="fas fa-check-square"></i> Selecionar Todos
+                        </button>
+                        <button id="download-selected" class="btn btn-success">
+                            <i class="fas fa-download"></i> Download Selecionados
+                        </button>
+                    </div>
+                </div>
+
+                <div class="files-list" id="files-list">
+                    <!-- Lista de arquivos será inserida aqui -->
+                </div>
+
+                <div class="progress-section" id="progress-section" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">Preparando downloads...</div>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <div id="status-messages" class="status-messages"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Export Articles - Ferramenta Acadêmica</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
